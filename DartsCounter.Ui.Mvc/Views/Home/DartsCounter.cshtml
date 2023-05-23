@@ -1,0 +1,51 @@
+﻿@model DartsCounter.Ui.Mvc.Models.DartsModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ff3333, #ff751a);
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            text-align: left;
+            font-size: 40px;
+            margin-top: 20px;
+        }
+
+        .span {
+            text-align: left;
+            font-size: 80px;
+            margin-top: 20px;
+        }
+
+        .button {
+            margin-top: 30px;
+        }
+
+        .form-control {
+            width: 100px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title">Game On!</h1>
+
+    <span class="span">@Model.StartingValue</span>
+
+    <div class="mb-3">
+        <label asp-for="Score" class="form-label">Score:</label>
+        <input type="number" asp-for="Score" class="form-control">
+    </div>
+
+    <form asp-action="Subtraction" asp-controller="Home" method="post">
+        <button type="submit" class="button">Submit score</button>
+    </form>
+
+</body>
+</html>

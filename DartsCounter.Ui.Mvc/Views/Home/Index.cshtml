@@ -1,0 +1,47 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ff3333, #ff751a);
+            margin: 0;
+            padding: 0;
+        }
+
+        .button {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 16px;
+            border: 25px solid green;
+            background-color: red;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title">Darts for the win!</h1>
+
+    @using (Html.BeginForm("Start", "Home", FormMethod.Post))
+    {
+        <button type="submit" class="button">Start</button>
+    }
+</body>
+</html>
+
+
+
+
