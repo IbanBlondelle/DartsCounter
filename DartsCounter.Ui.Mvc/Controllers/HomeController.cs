@@ -36,6 +36,17 @@ namespace DartsCounter.Ui.Mvc.Controllers
             return View("DartsCounter", dartsModel);
         }
 
+        [HttpPost]
+        public IActionResult ResetGame()
+        {
+            dartsModel.Score = 501;
+            return RedirectToAction("Start");
+        }
+
+        public ActionResult Returnhome()
+        {
+            return View("Index");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
