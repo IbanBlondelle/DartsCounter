@@ -5,11 +5,9 @@ namespace DartsCounter.Ui.Mvc.Models
     public class DartsModel
     {
 
-        // Gegooide score van de speler 
+        //current score of the player 
         public int Score { get; set; }
 
-        // Resultaat van de score
-        // public int Result { get; set; }
     }
 }
 
