@@ -8,11 +8,11 @@ namespace DartsCounter.Ui.Mvc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly DartsModel dartsModel;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(DartsModel CurrentUser)
         {
-            _logger = logger;
+            dartsModel = CurrentUser;
         }
 
         public IActionResult Index()
@@ -22,19 +22,18 @@ namespace DartsCounter.Ui.Mvc.Controllers
 
         public IActionResult Start()
         {
-            var dartsModel = new DartsModel(); // Create an instance of DartsModel
             return View("DartsCounter", dartsModel);
         }
 
 
         [HttpPost]
-        public IActionResult Subtraction(DartsModel darts)
+        public IActionResult Subtraction([FromForm] int Points)
         {
-            if (darts.Score < 181)
+            if (Points < 181)
             {
-                darts.StartingValue -= darts.Score;
+                dartsModel.Score -= Points;
             }
-            return View("DartsCounter", darts);
+            return View("DartsCounter", dartsModel);
         }
 
 

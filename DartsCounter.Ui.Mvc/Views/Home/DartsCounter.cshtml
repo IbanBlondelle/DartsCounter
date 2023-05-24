@@ -36,14 +36,12 @@
 <body>
     <h1 class="title">Game On!</h1>
 
-    <span class="span">@Model.StartingValue</span>
-
-    <div class="mb-3">
-        <label asp-for="Score" class="form-label">Score:</label>
-        <input type="number" asp-for="Score" class="form-control">
-    </div>
-
+    <span class="span">@Model.Score</span>
     <form asp-action="Subtraction" asp-controller="Home" method="post">
+        <div class="mb-3">
+            <label class="form-label">Score:</label>
+            <input type="number" class="form-control" name="Points">
+        </div>
         <button type="submit" class="button">Submit score</button>
     </form>
 
