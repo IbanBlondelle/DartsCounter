@@ -29,7 +29,7 @@ namespace DartsCounter.Ui.Mvc.Controllers
         [HttpPost]
         public IActionResult Subtraction([FromForm] int Points)
         {
-            if (dartsModel.Score > 0 && Points < 181)
+            if (dartsModel.Score > 0 && Points < 181 && Points <= dartsModel.Score)
             {
                 dartsModel.Score -= Points;
             }
